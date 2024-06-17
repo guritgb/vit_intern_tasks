@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bootstrap Form</title>
+    <title>Bootstrap Form with Validation</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -16,11 +16,40 @@
         border: 1px solid #ced4da;
         border-radius: 5px;
       }
+      .was-validated .form-control:invalid,
+      .was-validated .form-control:valid {
+        border-color: #ced4da;
+        padding-right: calc(1.5em + 0.75rem);
+      }
+      .was-validated .form-control:invalid:focus,
+      .was-validated .form-control:valid:focus {
+        border-color: #80bdff;
+      }
+      .invalid-feedback {
+        display: none;
+        width: 100%;
+        margin-top: 0.25rem;
+        font-size: 80%;
+        color: #dc3545;
+      }
+      .was-validated .form-control:invalid ~ .invalid-feedback {
+        display: block;
+      }
+      .valid-feedback {
+        display: none;
+        width: 100%;
+        margin-top: 0.25rem;
+        font-size: 80%;
+        color: #28a745;
+      }
+      .was-validated .form-control:valid ~ .valid-feedback {
+        display: block;
+      }
     </style>
   </head>
   <body>
     <div class="container form-container mt-5">
-      <form>
+      <form id="contactForm" novalidate>
         <div class="form-group">
           <label for="firstName">First Name</label>
           <div class="input-group">
@@ -32,7 +61,9 @@
               class="form-control"
               id="firstName"
               placeholder="First Name"
+              required
             />
+            <div class="invalid-feedback">First name is required.</div>
           </div>
         </div>
 
@@ -47,7 +78,9 @@
               class="form-control"
               id="lastName"
               placeholder="Last Name"
+              required
             />
+            <div class="invalid-feedback">Last name is required.</div>
           </div>
         </div>
 
@@ -64,7 +97,11 @@
               class="form-control"
               id="email"
               placeholder="E-Mail Address"
+              required
             />
+            <div class="invalid-feedback">
+              Please enter a valid email address.
+            </div>
           </div>
         </div>
 
@@ -79,7 +116,9 @@
               class="form-control"
               id="phone"
               placeholder="enter number"
+              required
             />
+            <div class="invalid-feedback">Phone number is required.</div>
           </div>
         </div>
 
@@ -94,7 +133,9 @@
               class="form-control"
               id="address"
               placeholder="Address"
+              required
             />
+            <div class="invalid-feedback">Address is required.</div>
           </div>
         </div>
 
@@ -109,15 +150,18 @@
               class="form-control"
               id="city"
               placeholder="City"
+              required
             />
+            <div class="invalid-feedback">City is required.</div>
           </div>
         </div>
 
         <div class="form-group">
           <label for="state">State</label>
-          <select class="form-control" id="state">
-            <option>Please select your state</option>
+          <select class="form-control" id="state" required>
+            <option value="">Please select your state</option>
           </select>
+          <div class="invalid-feedback">Please select your state.</div>
         </div>
 
         <div class="form-group">
@@ -129,6 +173,7 @@
               name="hosting"
               id="hostingYes"
               value="yes"
+              required
             />
             <label class="form-check-label" for="hostingYes">Yes</label>
           </div>
@@ -139,8 +184,12 @@
               name="hosting"
               id="hostingNo"
               value="no"
+              required
             />
             <label class="form-check-label" for="hostingNo">No</label>
+          </div>
+          <div class="invalid-feedback d-block">
+            Please select if you have hosting.
           </div>
         </div>
 
@@ -151,7 +200,9 @@
             id="projectDescription"
             rows="3"
             placeholder="Project Description"
+            required
           ></textarea>
+          <div class="invalid-feedback">Project description is required.</div>
         </div>
 
         <button type="submit" class="btn btn-warning">
@@ -159,5 +210,22 @@
         </button>
       </form>
     </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("contactForm");
+        form.addEventListener(
+          "submit",
+          function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add("was-validated");
+          },
+          false
+        );
+      });
+    </script>
   </body>
 </html>
