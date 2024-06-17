@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vertical Navigation Bar</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+
+      .nav-container {
+        display: inline-block;
+        border: 2px solid black;
+        padding: 10px;
+      }
+
+      .nav {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .nav-item {
+        padding: 10px;
+        text-align: left;
+        font-size: 18px;
+        color: blue;
+      }
+
+      .nav-item.home {
+        background-color: orange;
+        color: white;
+        font-weight: bold;
+      }
+
+      .nav-item:not(.home) {
+        background-color: lightblue;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Vertical Navigation Bar</h2>
+    <div class="nav-container">
+      <ul class="nav">
+        <li class="nav-item home">Home</li>
+        <li class="nav-item">Java</li>
+        <li class="nav-item">CSS</li>
+        <li class="nav-item">HTML</li>
+        <li class="nav-item">Bootstrap</li>
+      </ul>
+    </div>
+  </body>
+</html>

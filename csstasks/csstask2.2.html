@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Horizontal Navigation Bar</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: center;
+        background-color: #333;
+      }
+
+      .nav {
+        display: flex;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .nav-item {
+        padding: 15px 20px;
+        text-align: center;
+        font-size: 16px;
+        color: white;
+      }
+
+      .nav-item.home {
+        background-color: #007bff;
+      }
+
+      .nav-item:not(.home) {
+        background-color: #343a40;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Horizontal Navigation Bar</h2>
+    <div class="nav-container">
+      <ul class="nav">
+        <li class="nav-item home">Home</li>
+        <li class="nav-item">Java</li>
+        <li class="nav-item">CSS</li>
+        <li class="nav-item">HTML</li>
+        <li class="nav-item">Bootstrap</li>
+      </ul>
+    </div>
+  </body>
+</html>

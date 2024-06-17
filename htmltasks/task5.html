@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <style>
+      .form-container {
+        width: fit-content;
+        border: 1px solid black;
+        padding: 20px;
+        margin: auto;
+      }
+      .form-container table {
+        width: 100%;
+      }
+      .form-container th {
+        text-align: left;
+        padding-bottom: 10px;
+      }
+      .form-container td {
+        padding: 5px;
+      }
+      .form-container input[type="text"],
+      .form-container input[type="email"],
+      .form-container input[type="password"],
+      .form-container input[type="number"],
+      .form-container textarea,
+      .form-container select {
+        width: 100%;
+        padding: 5px;
+        box-sizing: border-box;
+      }
+      .form-container input[type="checkbox"] {
+        margin-right: 5px;
+      }
+      .form-container .submit-btn {
+        text-align: center;
+        padding-top: 10px;
+      }
+      .form-container .submit-btn input {
+        padding: 5px 20px;
+      }
+      .form-container .link {
+        text-align: center;
+        padding-top: 10px;
+      }
+      .form-container .link a {
+        text-decoration: none;
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h2 style="text-align: center; color: blue">Registration form</h2>
+      <form>
+        <table>
+          <tr>
+            <th>First Name</th>
+            <td><input type="text" name="firstname" /></td>
+          </tr>
+          <tr>
+            <th>Last Name</th>
+            <td><input type="text" name="lastname" /></td>
+          </tr>
+          <tr>
+            <th>Email</th>
+            <td><input type="email" name="email" /></td>
+          </tr>
+          <tr>
+            <th>Password</th>
+            <td><input type="password" name="password" /></td>
+          </tr>
+          <tr>
+            <th>Re-enter Password</th>
+            <td><input type="password" name="repassword" /></td>
+          </tr>
+          <tr>
+            <th>Gender</th>
+            <td>
+              <input type="radio" name="gender" value="male" /> Male
+              <input type="radio" name="gender" value="female" /> Female
+            </td>
+          </tr>
+          <tr>
+            <th>Age</th>
+            <td><input type="number" name="age" /></td>
+          </tr>
+          <tr>
+            <th>Phone Number</th>
+            <td><input type="text" name="phone" /></td>
+          </tr>
+          <tr>
+            <th>Address</th>
+            <td><textarea name="address" rows="4"></textarea></td>
+          </tr>
+          <tr>
+            <th>State</th>
+            <td><input type="text" name="state" /></td>
+          </tr>
+          <tr>
+            <th>Country</th>
+            <td>
+              <select name="country">
+                <option value="">Choose your country</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <th>Languages known</th>
+            <td>
+              <input type="checkbox" name="language" value="english" /> English
+              <input type="checkbox" name="language" value="kannada" /> Kannada
+              <input type="checkbox" name="language" value="hindi" /> Hindi
+              <input type="checkbox" name="language" value="telugu" /> Telugu
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <input type="checkbox" name="declaration" /> Hereby I declare all
+              the given details are true
+            </td>
+          </tr>
+        </table>
+        <div class="submit-btn">
+          <input type="submit" value="Register" />
+        </div>
+        <div class="link">
+          <a href="https://www.ethnus.com">Log in to Ethnus website</a>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

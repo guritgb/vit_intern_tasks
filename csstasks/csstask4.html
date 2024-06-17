@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hoverable Sidenav Buttons</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .sidenav {
+        height: 100%;
+        width: 60px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        padding-top: 20px;
+      }
+
+      .sidenav a {
+        padding: 15px 8px 15px 16px;
+        text-decoration: none;
+        font-size: 25px;
+        color: white;
+        display: block;
+        transition: 0.3s;
+      }
+
+      .sidenav a:hover {
+        padding-left: 32px;
+      }
+
+      .sidenav a:nth-child(1) {
+        background-color: #4caf50;
+      }
+
+      .sidenav a:nth-child(2) {
+        background-color: #2196f3;
+      }
+
+      .sidenav a:nth-child(3) {
+        background-color: #f44336;
+      }
+
+      .sidenav a:nth-child(4) {
+        background-color: #555;
+      }
+
+      .main {
+        margin-left: 60px;
+        padding: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidenav">
+      <a href="#" title="Home">H</a>
+      <a href="#" title="Messages">M</a>
+      <a href="#" title="Notifications">N</a>
+      <a href="#" title="Settings">S</a>
+    </div>
+
+    <div class="main">
+      <h2>Hoverable Sidenav Buttons</h2>
+      <p>
+        Hover over the buttons in the left side navigation to see the messages.
+      </p>
+    </div>
+  </body>
+</html>

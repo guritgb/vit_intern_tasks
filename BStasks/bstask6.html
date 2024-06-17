@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Form</title>
+
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .form-container {
+        max-width: 400px;
+        margin: auto;
+        padding: 1em;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .form-group {
+        margin-bottom: 1em;
+      }
+      .form-control:invalid {
+        border-color: #dc3545;
+      }
+      .form-control:invalid + .invalid-feedback {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container mt-5">
+      <form>
+        <div class="form-group">
+          <label for="name" class="form-label">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            placeholder="Enter your name"
+            required
+          />
+          <div class="invalid-feedback">Name is required</div>
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="Enter your email"
+            required
+          />
+          <div class="invalid-feedback">Email is required</div>
+        </div>
+
+        <div class="form-group">
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            placeholder="Enter your password"
+            required
+          />
+          <div class="invalid-feedback">Password is required</div>
+        </div>
+
+        <div class="form-group">
+          <label for="hobbies" class="form-label">Hobbies</label>
+          <select class="form-select" id="hobbies" required>
+            <option value="" disabled selected>Select your hobby</option>
+            <option value="Reading">Reading</option>
+            <option value="Traveling">Traveling</option>
+            <option value="Cooking">Cooking</option>
+            <option value="Other">Other</option>
+          </select>
+          <div class="invalid-feedback">Hobbies are required</div>
+        </div>
+
+        <button type="submit" class="btn btn-danger w-100">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
